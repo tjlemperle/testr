@@ -40,9 +40,7 @@ CREATE TABLE "tests" (
 );
 CREATE TABLE "test_questions" (
   "test_question_id" SERIAL,
-  "test_question_type" VARCHAR(100),
   "test_question" VARCHAR(500),
-  "test_question_asset" VARCHAR(500),
   "test_id" INT references tests(test_id),
   PRIMARY KEY ("test_question_id")
 );
@@ -53,11 +51,13 @@ CREATE TABLE "test_question_options" (
   "test_question_id" INT references test_questions(test_question_id),
   PRIMARY KEY ("test_question_option_id")
 );
-CREATE TABLE "test_users" (
-  "test_users_id" SERIAL,
-  "user_id" INT references users(user_id),
-  "test_id" INT references tests(test_id),
-  PRIMARY KEY ("test_users_id")
+
+create table test_question_student_answers (
+    test_questions_student_answer_id serial primary key, 
+    test_question_id int references test_questions(test_question_id),
+    test_question_option_id int REFERENCES test_question_options(test_question_option_id),
+    user_id int REFERENCES users(user_id),
+    date_taken TIMESTAMP
 );
 
 insert into users(user_id, username, first_name, last_name, user_email, password, role) values (1, 'tjlemperle', 'Travis', 'Lemperle', 'tjlemperle@gmail.com', 'test', 'ADMIN');
