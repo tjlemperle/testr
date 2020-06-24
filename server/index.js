@@ -29,24 +29,24 @@ massive({
     app.listen(port, console.log(`Server is running on port: ${port}`))
 })
 
-//auth
-app.post('/auth/register', ctrl.register)
+// //auth
+// app.post('/auth/register', ctrl.register)
 app.post('/auth/login', ctrl.login)
-app.get('/auth/me', ctrl.userInfo) //userReducer
-app.post('/api/logout', ctrl.logout)
+// app.get('/auth/me', ctrl.userInfo) //userReducer
+// app.post('/api/logout', ctrl.logout)
 
-//student
-app.get('/api/user', ctrl.getUserInfo)
-app.put('/api/user', ctrl.updateUserInfo)
-app.get('/api/classes', ctrl.getStudentClasses)
-app.get('/api/tests', ctrl.getAllTests)
-app.post('/api/test', ctrl.submitTestAnswers)
-app.get('/api/test/:id', ctrl.getSingleTest)
+// //student
+// app.get('/api/user', ctrl.getUserInfo)
+// app.put('/api/user', ctrl.updateUserInfo)
+// app.get('/api/classes', ctrl.getStudentClasses)
+// app.get('/api/tests', ctrl.getAllTests)
+// app.post('/api/test', ctrl.submitTestAnswers)
+// app.get('/api/test/:id', ctrl.getSingleTest)
 
 
-//admin
-app.get('/api/classes', ctrl.getAdminClasses)
-app.get('/api/classes/students', ctrl.getClassStudents)
-app.post('/api/createTest', ctrl.createTest)
-app.put('/api/test/:id', ctrl.updateTest)
-app.delete('/api/test/:id', ctrl.deleteTest)
+// //admin
+// app.get('/api/classes', ctrl.getAdminClasses)
+// app.get('/api/classes/students', ctrl.getClassStudents)
+// app.post('/api/createTest', ctrl.createTest)
+// app.put('/api/test/:id', ctrl.updateTest)
+// app.delete('/api/test/:id', ctrl.deleteTest)
