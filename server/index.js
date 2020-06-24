@@ -30,7 +30,7 @@ massive({
 })
 
 // //auth
-// app.post('/auth/register', ctrl.register)
+app.post('/auth/register', ctrl.register)
 app.post('/auth/login', ctrl.login)
 // app.get('/auth/me', ctrl.userInfo) //userReducer
 // app.post('/api/logout', ctrl.logout)

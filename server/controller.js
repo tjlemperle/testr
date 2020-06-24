@@ -11,9 +11,11 @@ module.exports = {
             return res.status(400).send('Username taken')
         }
 
-        let salt = bcrypt.genSaltSync(10)
+        let salt = bcrypt.genSaltSync(5)
         let hash = bcrypt.hashSync(password, salt)
 
+        console.log(username, first_name, last_name, user_email, password, role, hash)
+        
         let [newUser] = await db.auth.register_user({
             username,
             first_name,
@@ -21,7 +23,7 @@ module.exports = {
             user_email,
             password: hash,
             role
-        })
+        });
 
         res.status(201).send(newUser)
 
@@ -35,16 +37,16 @@ module.exports = {
         console.log(password)
 
         let user = await db.auth.check_user(username)
-        if(user[0]){
+        if(!user[0]){
             return res.status(400).send('No user found')
         }
-        
         console.log(user)
+        
         const authenticated = bcrypt.compareSync(password, user[0].password)
         if(!authenticated){
             return res.status(401).send('Username or password incorrect')
         }
-
+        
         delete user[0].password
 
 

@@ -7,11 +7,11 @@ insert into users (
     role
 ) values (
     ${username},
-    $(first_name),
-    $(last_name),
-    $(user_email),
+    ${first_name},
+    ${last_name},
+    ${user_email},
     ${password},
     ${role}
 )
 
-returning username, first_name, last_name, user_email, role
+returning user_id, username, first_name, last_name, user_email, role
