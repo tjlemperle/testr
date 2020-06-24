@@ -25,7 +25,8 @@ module.exports = {
             role
         });
 
-        res.status(201).send(newUser)
+        req.session.user = newUser
+        res.status(201).send(req.session.user)
 
     },
 
@@ -49,7 +50,21 @@ module.exports = {
         
         delete user[0].password
 
+        req.session.user = user[0]
+        res.status(202).send(req.session.user)
+    },
 
-        res.status(202).send(user[0])
+    userInfo: async (req, res) => {
+        if(req.session.user) {
+            // console.log(req.session.user)
+            res.status(200).send(req.session.user)
+        } else {
+            res.sendStatus(404)
+        }
+    }, 
+
+    logout: (req, res) => {
+        req.session.destroy()
+        res.sendStatus(200)
     }
 }
