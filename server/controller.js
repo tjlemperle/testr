@@ -66,5 +66,15 @@ module.exports = {
     logout: (req, res) => {
         req.session.destroy()
         res.sendStatus(200)
+    },
+
+    getStudentClasses: async (req, res) => {
+        const db = req.app.get('db')
+
+        const {user_id} = req.session.user
+
+        let classes = await db.student.get_classes(user_id)
+
+        return res.status(200).send(classes)
     }
 }

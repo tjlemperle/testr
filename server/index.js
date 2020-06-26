@@ -36,9 +36,8 @@ app.get('/auth/me', ctrl.userInfo) //userReducer
 app.post('/api/logout', ctrl.logout)
 
 // //student
-// app.get('/api/user', ctrl.getUserInfo)
-// app.put('/api/user', ctrl.updateUserInfo)
-// app.get('/api/classes', ctrl.getStudentClasses)
+// app.put('/api/user/:user_id', ctrl.updateUserInfo)
+app.get('/api/classes', ctrl.getStudentClasses)
 // app.get('/api/tests', ctrl.getAllTests)
 // app.post('/api/test', ctrl.submitTestAnswers)
 // app.get('/api/test/:id', ctrl.getSingleTest)

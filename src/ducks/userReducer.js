@@ -17,7 +17,7 @@ const RESET_USER = 'RESET_USER'
 
 export function getUser(){
     const user = axios.get('/auth/me')
-
+    // console.log(user)
     return{
         type: GET_USER,
         payload: user
@@ -48,7 +48,7 @@ export default function reducer(state = initialState, action) {
         case GET_USER + '_PENDING':
             return state
         case GET_USER + '_FULFILLED':
-            return {...state, ...payload, isLoggedIn: true}
+            return {...state, ...payload.data, isLoggedIn: true}
         case GET_USER + '_REJECTED':
             return initialState
         default:

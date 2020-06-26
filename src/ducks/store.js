@@ -2,6 +2,7 @@ import {createStore, combineReducers, applyMiddleware} from 'redux'
 import userReducer from './userReducer'
 import testReducer from './testReducer'
 import promiseMiddleware from 'redux-promise-middleware'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 
 const rootReducer = combineReducers({
@@ -9,4 +10,7 @@ const rootReducer = combineReducers({
     posts: testReducer
 })
 
-export default createStore(rootReducer, applyMiddleware(promiseMiddleware))
+export default createStore(
+    rootReducer, 
+    composeWithDevTools(applyMiddleware(promiseMiddleware))
+    )
