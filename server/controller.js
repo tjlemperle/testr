@@ -76,5 +76,16 @@ module.exports = {
         let classes = await db.student.get_classes(user_id)
 
         return res.status(200).send(classes)
+    },
+
+    getAllTests: async (req, res) => {
+        const db = req.app.get('db')
+
+        const {user_id} = req.session.user
+        const {class_id} = req.params
+
+        let tests = await db.student.get_class_info(class_id, user_id)
+
+        res.status(200).send(tests)
     }
 }
