@@ -82,6 +82,9 @@ insert into class_users(user_id, class_id) values (3, 2);
 insert into class_users(user_id, class_id) values (3, 4);
 insert into class_users(user_id, class_id) values (5, 4);
 
+insert into class_users(user_id, class_id) values (11, 1);
+insert into class_users(user_id, class_id) values (11, 2);
+insert into class_users(user_id, class_id) values (11, 3);
 
 insert into tests(test_id, test_name, start_date, end_date, test_avail_status, date_taken, class_id) values (1, 'Exam 1 CS1400', NOW(), NOW(), TRUE, null, 1);
 insert into tests(test_id, test_name, start_date, end_date, test_avail_status, date_taken, class_id) values (2, 'Exam 2 CS1400', NOW(), NOW(), TRUE, null, 1);
