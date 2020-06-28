@@ -47,7 +47,6 @@ function StudentClass(props) {
             :
             <div>
             <span>{tests[0].class_name}</span>
-            <span>updated</span>
                 {mappedTests}
             </div>
 
