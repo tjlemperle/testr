@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {setUser} from '../../../ducks/userReducer'
 import axios from 'axios'
 
-import './StudenDash.css'
+import './StudenDash.scss'
 
 function StudentDash(props){
 

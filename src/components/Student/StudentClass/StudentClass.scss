@@ -1,0 +1,25 @@
+@import '../../../../scss/variables';
+
+$baackground: rgb(199, 199, 199);
+
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.student-class-test{
+    position: relative;
+    margin-bottom: 20px;
+    top: 200px;
+    left: 300px;
+    height: 50px;
+    width: 400px;
+    box-sizing: border-box;
+    background-color: rgb(170, 170, 170);
+    border-radius: 10px;
+    @include flexCenter;
+    justify-content: space-evenly;
+
+}
+

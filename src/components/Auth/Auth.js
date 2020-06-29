@@ -3,8 +3,10 @@ import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {setUser} from '../../ducks/userReducer'
-import './Auth.css'
+import './Auth.scss'
 import axios from 'axios'
+
+
 
 function Auth(props) {
 

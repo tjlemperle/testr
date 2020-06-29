@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {getUser, resetUser} from '../../ducks/userReducer'
 import axios from 'axios'
 
-import './Nav.css'
+import './Nav.scss'
 
 class Nav extends Component{
     constructor(props){

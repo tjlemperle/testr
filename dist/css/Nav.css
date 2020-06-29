@@ -1,0 +1,120 @@
+#nav-container {
+  height: 100vh;
+  width: 200px;
+  position: fixed;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #BEFF9F;
+  z-index: 1;
+}
+
+#nav-links-container {
+  position: relative;
+  height: 100vh;
+}
+
+#arrow-container {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  height: 50px;
+  width: 80px;
+}
+
+#arrow {
+  font-size: 60px;
+}
+
+#arrow-container:hover {
+  cursor: pointer;
+}
+
+#nav-user-info {
+  position: relative;
+  width: 100%;
+  top: 10vh;
+}
+
+#nav-user-info:hover, #nav-dashboard:hover {
+  background-color: #989998ab;
+}
+
+#account-link-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font: black;
+  text-decoration: none;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#nav-dashboard {
+  position: relative;
+  top: 10vh;
+}
+
+#dashboard-link-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font: black;
+  text-decoration: none;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#nav-logout-btn {
+  position: relative;
+  height: 50px;
+  width: 100px;
+  background-color: #fc9898;
+  bottom: 50px;
+  border-radius: 5px;
+}
+
+#account-silhoutte, #dashboard-silhoutte {
+  max-width: 70px;
+  border-radius: 100px;
+}
+
+#account-span {
+  text-decoration: none;
+  font: black;
+}
+
+.link {
+  text-decoration: none;
+  font: black;
+}
+
+.link:link, .link:visited {
+  font: black;
+}

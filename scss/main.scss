@@ -1,3 +1,15 @@
-body {
-    background: blue;
+@import '../src/components/Student/StudentDash/StudenDash.scss';
+@import '../src/components/Auth/Auth.scss';
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main{
+    @include flexCenter;
+    width: 80%;
+    margin: 0 auto;
 }

@@ -1,0 +1,24 @@
+.student-class-test {
+  position: relative;
+  margin-bottom: 20px;
+  top: 200px;
+  left: 300px;
+  height: 50px;
+  width: 400px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #aaaaaa;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}

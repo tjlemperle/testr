@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {setUser} from '../../../ducks/userReducer'
 import axios from 'axios'
+
+import './StudentClass.scss'
 
 
 function StudentClass(props) {
@@ -26,10 +28,12 @@ function StudentClass(props) {
 
     const mappedTests = tests.map((element, index) => {
         return(
+            <Link to={`/test/${element.test_id}`}>
             <div className='student-class-test' key={index}>          
                 <span>{element.test_name}</span>
                 <span>{element.end_date}</span>
             </div>
+            </Link>
         )
     })
 
