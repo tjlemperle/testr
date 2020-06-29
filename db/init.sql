@@ -93,10 +93,10 @@ insert into tests(test_id, test_name, start_date, end_date, test_avail_status, d
 insert into tests(test_id, test_name, start_date, end_date, test_avail_status, date_taken, class_id) values (5, 'Exam 1 CS1410', NOW(), NOW(), TRUE, null, 2);
 
 
-insert into test_questions(test_question_id, test_question_type, test_question, test_question_asset, test_id) values (1, 'TEXT', 'What is 2 + 2?', null, 1);
-insert into test_questions(test_question_id, test_question_type, test_question, test_question_asset, test_id) values (2, 'TEXT', 'What is 2 + 4?', null, 1);
-insert into test_questions(test_question_id, test_question_type, test_question, test_question_asset, test_id) values (3, 'TEXT', 'What is 2 + 6?', null, 1);
-insert into test_questions(test_question_id, test_question_type, test_question, test_question_asset, test_id) values (4, 'TEXT', 'What is 2 + 8?', null, 1);
+insert into test_questions(test_question_id, test_question, test_id) values (1, 'What is 2 + 2?', 1);
+insert into test_questions(test_question_id, test_question, test_id) values (2, 'What is 2 + 4?', 1);
+insert into test_questions(test_question_id, test_question, test_id) values (3, 'What is 2 + 6?', 1);
+insert into test_questions(test_question_id, test_question, test_id) values (4, 'What is 2 + 8?', 1);
 
 
 

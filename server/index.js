@@ -40,7 +40,7 @@ app.post('/api/logout', ctrl.logout)
 app.get('/api/classes', ctrl.getStudentClasses)
 app.get('/api/class/:class_id', ctrl.getAllTests)
 // app.post('/api/test', ctrl.submitTestAnswers)
-// app.get('/api/test/:id', ctrl.getSingleTest)
+app.get('/api/test/:test_id', ctrl.getSingleTest)
 
 
 // //admin

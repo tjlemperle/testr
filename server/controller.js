@@ -87,5 +87,27 @@ module.exports = {
         let tests = await db.student.get_class_info(class_id, user_id)
 
         res.status(200).send(tests)
+    },
+
+    getSingleTest: async (req, res) => {
+        const db = req.app.get('db')
+
+        // const {user_id} = req.session.user
+        const {test_id} = req.params
+
+        // let status = await db.student.check_student_test_status(test_id, user_id)
+
+        // console.log(status, user_id, test_id)
+
+        // if(status){
+
+            let test = await db.student.get_test_questions(test_id)
+
+            res.status(200).send(test)
+
+        // } else {
+        //     res.status(401).send('Unauthorized to take this test')
+        // }
+
     }
 }
