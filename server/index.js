@@ -41,6 +41,7 @@ app.get('/api/classes', ctrl.getStudentClasses)
 app.get('/api/class/:class_id', ctrl.getAllTests)
 // app.post('/api/test', ctrl.submitTestAnswers)
 app.get('/api/test/:test_id', ctrl.getSingleTest)
+app.post('/api/class/:class_id', ctrl.addStudentClass)
 
 
 // //admin

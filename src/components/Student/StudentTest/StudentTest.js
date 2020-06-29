@@ -12,9 +12,10 @@ function StudentTest(props) {
     const [questionNum, setQuestionNum] = useState(1)
 
     useEffect(() => {
+        // setLoading(true)
         getTestQuestions()
-        // console.log(props.match.params.testid)
-    } )
+        console.log(props.match.params.testid)
+    }, [] )
     
     const getTestQuestions = () => {
         axios.get(`/api/test/${props.match.params.testid}`)
@@ -53,14 +54,16 @@ function StudentTest(props) {
                 </div>
             :
                 <div className='questions-container'>
-                    {test[0].test_name}
-                    <div>
-                    <span>{questionNum}.</span>
-                    <span>{}</span>
-                    </div>
-                    <div>
-                    {questionNum > 1 ? <button>Previous</button>: null}
-                    {questionNum < questionsLength ? <button>Next</button> : null}
+                    <div>                           
+                        {test[0].test_name}
+                        <div>
+                        <span>{questionNum}.</span>
+                        <span>{}</span>
+                        </div>
+                        <div>
+                            {questionNum > 1 ? <button>Previous</button>: null}
+                            {questionNum < questionsLength ? <button>Next</button> : null}
+                        </div>
                     </div>
                 </div>
             }

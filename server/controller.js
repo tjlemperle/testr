@@ -8,7 +8,7 @@ module.exports = {
 
         let user = await db.auth.check_user(username)
         if(user[0]) {
-            return res.status(400).send('Username taken')
+            return res.status(409).send('Username or email taken')
         }
 
         let salt = bcrypt.genSaltSync(5)
@@ -102,12 +102,33 @@ module.exports = {
         // if(status){
 
             let test = await db.student.get_test_questions(test_id)
-
+ 
+            console.log(test)
             res.status(200).send(test)
 
         // } else {
         //     res.status(401).send('Unauthorized to take this test')
         // }
+
+    },
+
+    addStudentClass: async(req, res) => {
+        const db = req.app.get('db')
+
+        const {class_id} = req.params
+        const {user_id} = req.session.user
+
+        let status = await db.student.check_class_user(user_id, class_id)
+
+        if(status[0]){
+            console.log('student already in class')
+        } else{
+            
+            db.student.add_student_class(user_id, class_id)
+        }
+
+
+        res.sendStatus(200)
 
     }
 }
