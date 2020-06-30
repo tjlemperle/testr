@@ -6,6 +6,7 @@ const cors = require('cors')
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 const port = SERVER_PORT
 const ctrl = require('./controller')
+const adminCtrl = require('./adminController')
 const app = express()
 
 app.use(cors());
@@ -45,7 +46,8 @@ app.post('/api/class/:class_id', ctrl.addStudentClass)
 
 
 // //admin
-// app.get('/api/classes', ctrl.getAdminClasses)
+app.get('/api/adminclasses', adminCtrl.getAdminClasses)
+app.get('/api/adminclass/:class_id', adminCtrl.getAllAdminTests)
 // app.get('/api/classes/students', ctrl.getClassStudents)
 // app.post('/api/createTest', ctrl.createTest)
 // app.put('/api/test/:id', ctrl.updateTest)

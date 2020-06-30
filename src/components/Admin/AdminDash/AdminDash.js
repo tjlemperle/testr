@@ -5,8 +5,54 @@ import axios from 'axios'
 
 import './AdminDash.scss'
 
+
 function AdminDash(props){
 
+    const [classes, setClasses] = useState([])
+    const [isLoading, setLoading] = useState(true)
+
+    useEffect(() => {
+        getAdminClasses()
+    }, [])
+
+    const getAdminClasses = () => {
+        axios.get(`api/adminclasses`)
+        .then(res => {
+            setClasses(res.data)
+            setLoading(false)
+        })
+        .catch(err => console.log(err))
+    }
+
+    const mappedClasses = classes.map((element, index) => {
+        return(
+            <Link to={`/adminclass/${element.class_id}`}>              
+            <div className='student-class-dash' key={index}>
+                <span>{element.class_name}</span>
+                <div className='teacher-name'>
+                    <span>{element.first_name}</span>
+                    <span>{element.last_name}</span>
+                </div>
+            </div>
+            </Link>
+        )
+    })
+
+    return(
+        <section id='dashboard-container'>
+            <span id='classes-title-span'>Classes</span>
+
+            {isLoading === true ?
+            
+            <span id='loading-span'>Please wait...</span>
+            :
+            <div>
+            {mappedClasses}
+            </div>    
+            }
+        </section>
+    
+    )
 
 }
 
