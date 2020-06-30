@@ -9,7 +9,7 @@ function StudentTest(props) {
     const [test, setTest] = useState([])
     const [isLoading, setLoading] = useState(true)
     // const [index, setIndex] = useState(1) 
-    const [questionNum, setQuestionNum] = useState(1)
+    let [questionNum, setQuestionNum] = useState(1)
 
     useEffect(() => {
         // setLoading(true)
@@ -17,6 +17,7 @@ function StudentTest(props) {
         .then(res => {
             setTest(res.data)
             setLoading(false)
+
         })
         .catch(err => console.log(err))
     }, [props.match.params.testid] )
@@ -44,31 +45,91 @@ function StudentTest(props) {
     console.log(test)
 
     return(
-        <div>
-            <span>Test: </span>
+        <div id='test'>
             {isLoading === true 
             ? 
-                <div>
-                    <span>Please wait</span>
-                </div>
+            <div>
+                <span>Please wait...</span>
+            </div>
             :
+            <div id='test-container'>
                 <div className='questions-container'>
-                    <div>                           
-                        {test[0].test_name}
+                    <div>       
+                        <span id='test-name-span'>
+                            {test[0].test_name}
+                        </span>                    
                         <div>
-                        <span>{questionNum}.</span>
-                        <span>{}</span>
+                            <span id='question-num'>Question {questionNum}</span>
                         </div>
+                        <div id='question-container'>
+                            <span>Test Question</span>
+                        </div>
+                        <div id='options'>
+                            <div className='option-container'>
+                                <input type='radio' className='test-question-option' />
+                                <div>
+                                    <span>Test Question Option 1</span>
+                                </div>
+                            </div>
+                            <div className='option-container'>
+                                <input type='radio' className='test-question-option' />
+                                <div>
+                                    <span>Test Question Option 2</span>
+                                </div>
+                            </div>
+                            <div className='option-container'>
+                                <input type='radio' className='test-question-option' />
+                                <div>
+                                    <span>Test Question Option 3</span>
+                                </div>
+                            </div>
+                            <div className='option-container'>
+                                <input type='radio' className='test-question-option' />
+                                <div>
+                                    <span>Test Question Option 4</span>
+                                </div>
+                            </div>
+                            {/* <span>{Object.keys(questions)}</span> */}
+                        </div>   
                         <div>
-                            {questionNum > 1 ? <button  onClick={setQuestionNum(questionNum + 1)}>Previous</button>: null}
-                            {questionNum < questionsLength ? <button>Next</button> : null}
+                            {questionNum > 1 
+                            ? 
+                            <button  
+                                className='auth-button'
+                                id='test-btn-prev'
+                                onClick={() => setQuestionNum(questionNum -= 1)}
+                            >Previous</button>
+                            : 
+                            null
+                            }
+                            {questionNum < questionsLength 
+                            ? 
+                            <button
+                                className='auth-button'
+                                id='test-btn-next'
+                                onClick={() => setQuestionNum(questionNum += 1)}
+                            >Next</button> 
+                            : 
+                            null
+                            }
+                            {questionNum === questionsLength
+                            ?
+                            <button
+                                className='auth-button'
+                                id='test-btn-submit'
+                                // onClick={() => setQuestionNum(questionNum += 1)}
+                            >Submit</button>
+                            :
+                            null
+                            }
                         </div>
                     </div>
                 </div>
+            </div>
             }
         </div>
     )
-
+    
 }
 
 const mapStateToProps = reduxState => reduxState;

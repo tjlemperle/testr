@@ -1,0 +1,136 @@
+#test {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80vh;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#test-container {
+  position: fixed;
+  top: 10vh;
+  height: 80vh;
+  width: 50%;
+  background-color: #fcf9f9;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5%;
+}
+
+#test-name-span {
+  position: fixed;
+  left: 40%;
+  top: 10px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 60px;
+}
+
+#question-num {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-size: 40px;
+}
+
+.option-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 18px;
+  margin-top: 10px;
+  background-color: rgba(131, 131, 131, 0.74);
+  width: 80%;
+  height: 65px;
+}
+
+#options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.test-question-option {
+  position: absolute;
+  left: 80px;
+  height: 50px;
+  border-radius: 15px;
+  width: 10%;
+}
+
+#question-container {
+  position: relative;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  left: 78px;
+  height: 250px;
+  width: 80%;
+  background-color: rgba(131, 131, 131, 0.74);
+}
+
+#test-btn-next {
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+}
+
+#test-btn-prev {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+}
+
+#test-btn-submit {
+  position: absolute;
+  bottom: 20px;
+}
+/*# sourceMappingURL=StudentTest.css.map */
