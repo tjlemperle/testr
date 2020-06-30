@@ -8,39 +8,54 @@ function StudentTest(props) {
 
     const [test, setTest] = useState([])
     const [isLoading, setLoading] = useState(true)
-    // const [index, setIndex] = useState(1) 
+    const [index, setIndex] = useState(0)
     let [questionNum, setQuestionNum] = useState(1)
 
+    const groupBy = (array) => {
+        
+        return array.reduce((result, option) => {
+            const index = result.findIndex(question => question.test_question_id === option.test_question_id)
+
+            if(index === -1){
+                result.push({test_name: option.test_name, test_question: option.test_question, test_question_id: option.test_question_id, options: [option], student_response: null})
+            } else {
+                result[index].options.push(option)
+            }
+
+            return result
+
+        }, [])
+    }
+
     useEffect(() => {
-        // setLoading(true)
         axios.get(`/api/test/${props.match.params.testid}`)
         .then(res => {
-            setTest(res.data)
+            setTest(groupBy(res.data))
             setLoading(false)
 
         })
         .catch(err => console.log(err))
+
+        
     }, [props.match.params.testid] )
     
-    // const getTestQuestions = () => {
+ 
+    const recordStudentAnswer = (test_questions_option_id) => {
+        setTest(prevTest => {
+            const newTest = [...prevTest]
+            newTest[index].student_response = test_questions_option_id
 
-    // }
-    
-   
-    
-    const groupBy = (array, key) => {
-        
-        return array.reduce((result, currentValue) => {
-           (result[currentValue[key]] = result[currentValue[key]] || []).push(currentValue) 
-
-           return result
-        }, {})
+            return newTest
+        })    
     }
+    
 
-    const questions = groupBy(test, 'test_question_id')
-    const questionsLength = Object.keys(questions).length
+    
 
-    console.log(questions)
+    // const questions = groupBy(test, 'test_question_id')
+    // const questionsLength = Object.keys(questions).length
+
+    // console.log(questions)
     // console.log(questionsLength)
     console.log(test)
 
@@ -56,68 +71,60 @@ function StudentTest(props) {
                 <div className='questions-container'>
                     <div>       
                         <span id='test-name-span'>
-                            {test[0].test_name}
+                            {test[index].test_name}
                         </span>                    
                         <div>
                             <span id='question-num'>Question {questionNum}</span>
                         </div>
                         <div id='question-container'>
-                            <span>Test Question</span>
+                            <span>{test[index].test_question}</span>
                         </div>
                         <div id='options'>
-                            <div className='option-container'>
-                                <input type='radio' className='test-question-option' />
-                                <div>
-                                    <span>Test Question Option 1</span>
-                                </div>
-                            </div>
-                            <div className='option-container'>
-                                <input type='radio' className='test-question-option' />
-                                <div>
-                                    <span>Test Question Option 2</span>
-                                </div>
-                            </div>
-                            <div className='option-container'>
-                                <input type='radio' className='test-question-option' />
-                                <div>
-                                    <span>Test Question Option 3</span>
-                                </div>
-                            </div>
-                            <div className='option-container'>
-                                <input type='radio' className='test-question-option' />
-                                <div>
-                                    <span>Test Question Option 4</span>
-                                </div>
-                            </div>
+                            {test[index].options.map(option => {
+                                return(
+                                    <div className='option-container'>
+                                        <div className={`test-question-option ${test[index].student_response === option.test_question_option_id ? 'test-question-option-selected': ''}`} 
+                                            onClick={() => recordStudentAnswer(option.test_question_option_id)}
+                                        > 
+                                            
+                                        </div>
+                                        <div>
+                                            <span>{option.test_question_option}</span>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                            }
+                            
                             {/* <span>{Object.keys(questions)}</span> */}
                         </div>   
                         <div>
-                            {questionNum > 1 
+                            {index > 0 
                             ? 
                             <button  
                                 className='auth-button'
                                 id='test-btn-prev'
-                                onClick={() => setQuestionNum(questionNum -= 1)}
+                                onClick={() => setIndex(index - 1)}
                             >Previous</button>
                             : 
                             null
                             }
-                            {questionNum < questionsLength 
+                            {index < test.length && index !== test.length -1
                             ? 
                             <button
                                 className='auth-button'
                                 id='test-btn-next'
-                                onClick={() => setQuestionNum(questionNum += 1)}
+                                onClick={() => setIndex(index + 1)}
                             >Next</button> 
                             : 
                             null
                             }
-                            {questionNum === questionsLength
+                            {index === test.length - 1
                             ?
                             <button
                                 className='auth-button'
                                 id='test-btn-submit'
-                                // onClick={() => setQuestionNum(questionNum += 1)}
+                                // onClick={() => setindex(index += 1)}
                             >Submit</button>
                             :
                             null
