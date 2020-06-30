@@ -4,7 +4,7 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 import {setUser} from '../../ducks/userReducer'
 
-
+import './Register.scss'
 
 class Register extends Component {
     constructor(props){
