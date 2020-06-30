@@ -51,13 +51,17 @@ class Register extends Component {
 
     render(){
         return(
-            <div>
+            <div id='register'>
                 <section id='register-container'>
-                    <span>TESTr Account Registration</span>
+                    <span id='reg-title-span'>TESTr</span>
+                    <span id='reg-acc-reg-span'>Account Registration</span>
                     <section id='register-inputs-container'>
                         <section id='register-username'>
-                            <span>Username: </span>
+                            <span 
+                                className='auth-span'
+                            >Username </span>
                             <input 
+                            className='auth-input'
                             name='username'
                             type='text'
                             placeholder='Username'
@@ -66,8 +70,11 @@ class Register extends Component {
                             />
                         </section>
                         <section id='register-first_name'>
-                            <span>First Name: </span>
+                            <span
+                                className='auth-span'
+                            >First Name </span>
                             <input 
+                            className='auth-input'
                             name='first_name'
                             type='text'
                             placeholder='First Name'
@@ -76,8 +83,11 @@ class Register extends Component {
                             />
                         </section>
                         <section id='register-last_name'>
-                            <span>Last Name: </span>
+                            <span
+                                className='auth-span'
+                            >Last Name </span>
                             <input 
+                            className='auth-input'
                             name='last_name'
                             type='text'
                             placeholder='Last Name'
@@ -86,8 +96,11 @@ class Register extends Component {
                             />
                         </section>
                         <section id='register-user_email'>
-                            <span>Email: </span>
+                            <span
+                                className='auth-span'
+                            >Email </span>
                             <input 
+                            className='auth-input'
                             name='user_email'
                             type='email'
                             placeholder='Email'
@@ -96,34 +109,46 @@ class Register extends Component {
                             />
                         </section>
                         <section id='register-password'>
-                            <span>Password: </span>
+                            <span
+                                className='auth-span'
+                            >Password </span>
                             <input 
+                            className='auth-input'
                             name='password'
                             type='password'
                             placeholder='Password'
                             onChange={this.handleChange}
                             value={this.state.password}
                             />
-                            <button>Show</button>
+
                         </section>
                         <section id='register-verify-password'>
-                            <span>Verify Password: </span>
+                            <span
+                                className='auth-span'
+                            >Verify Password </span>
                             <input 
+                            className='auth-input'
                             name='verifyPassword'
                             type='password'
                             placeholder='Verify Password'
                             onChange={this.handleChange}
                             value={this.state.verifyPassword}
                             />
-                            <button>Show</button>
+
                         </section>
                     </section >
                     <section id='register-buttons'>
                         <Link to='/'>
-                            <button>Back</button>
+                            <button
+                                className='auth-button'
+                            >Back</button>
                         </Link>
-                        <button>Clear</button>
-                        <button id='register-button'
+                        <button
+                            className='auth-button'
+                        >Clear</button>
+                        <button 
+                        className='auth-button'
+                        id='register-button'
                         onClick={this.registerAccount}
                         >Register</button>
                     </section>

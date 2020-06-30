@@ -1,0 +1,76 @@
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+$auth-span: 25px;
+
+#register{
+    @include flexCenter;
+    height: 80vh;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+#register-container{
+    position: fixed;
+    height: 680px;
+    width: 400px;
+    background-color: rgb(252, 249, 249);
+    box-sizing: border-box;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5%
+}
+
+#reg-title-span{
+    position: absolute;
+    align-self: center;
+    top: 20px;
+    font-size: 70px;
+}
+
+#reg-acc-reg-span{
+    position: absolute;
+    align-self: center;
+    top: 85px;
+    font-size: 20px;
+}
+
+#register-buttons{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    left: 0px;
+    bottom: 20px;
+    width: 100%;
+}
+
+#register-inputs-container{
+    position: absolute;
+    top: 140px;
+    left: 0px;
+}
+
+.auth-input{
+    // position: absolute;
+    height: 30px;
+    width: 360px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    // left: 15px;
+}
+
+.auth-span{
+    float: left;
+    margin-left: 15px;
+    font-size: $auth-span;
+    left: 0px;
+}
