@@ -48,6 +48,16 @@ class Register extends Component {
         }
     }
 
+    clear = () => {
+        this.setState({
+            username: '',
+            first_name: '',
+            last_name: '',
+            user_email: '',
+            password: '',
+            verifyPassword: ''
+        })
+    }
 
     render(){
         return(
@@ -145,6 +155,7 @@ class Register extends Component {
                         </Link>
                         <button
                             className='auth-button'
+                            onClick={this.clear}
                         >Clear</button>
                         <button 
                         className='auth-button'
