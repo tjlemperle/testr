@@ -3,8 +3,9 @@ import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {setUser} from '../../ducks/userReducer'
-import './Auth.scss'
 import axios from 'axios'
+
+import './Auth.scss'
 
 
 
@@ -40,44 +41,48 @@ function Auth(props) {
 
     // console.log(username, password)
     return (
-        <div>
         <div className='auth-container'>
-            <span id='auth-title-span'>TESTr</span>
-            <section id='auth-input-container'>
-                <section className='auth-input'>
-                    <span>Username: </span>
-                    <input 
-                        type='text'
-                        name='username'
-                        placeholder='Username'
-                        value={username}
-                        onChange={e => setUserName(e.target.value)}
-                    />
+            <div id='auth'>
+                <span id='auth-title-span'>TESTr</span>
+                <section id='auth-input-container'>
+                    <section id='auth-input'>
+                        <span id='username-span'>Username </span>
+                        <input 
+                            id='username-input'
+                            type='text'
+                            name='username'
+                            placeholder='Username'
+                            value={username}
+                            onChange={e => setUserName(e.target.value)}
+                            />
+                    </section>
+                    <sectoin id='pass-container'>
+                        <span id='password-span'>Password </span>
+                        <input 
+                            id='password-input'
+                            type='password'
+                            name='password'
+                            placeholder='Password'
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+                            />
+                    </sectoin>
                 </section>
-                <sectoin id='password-input'>
-                    <span>Password: </span>
-                    <input 
-                        type='password'
-                        name='password'
-                        placeholder='Password'
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                    />
-                </sectoin>
-            </section>
-            <section id='auth-btns-container'>
-                <button 
-                    className='auth-button'
-                    onClick={handleLogin}
-                >Login</button>
-                <Link to='/register'>
+                <section id='auth-btns-container'>
                     <button 
-                        id='register-link-button'
-                        >Register</button>
-                </Link>
-            </section>
+                        className='auth-button'
+                        id='login-btn'
+                        onClick={handleLogin}
+                        >Login</button>
+                    <Link to='/register'>
+                        <button 
+                            className='auth-button'
+                            id='register-link-btn'
+                            >Register</button>
+                    </Link>
+                </section>
+            </div>
         </div>
-    </div>
     )
 }
 

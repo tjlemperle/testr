@@ -1,3 +1,7 @@
+body {
+  background-color: rgba(197, 197, 197, 0.438);
+}
+
 .auth-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12,4 +16,136 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 60vh;
+  width: 80%;
+  margin: 0 auto;
 }
+
+#auth {
+  position: fixed;
+  height: 400px;
+  width: 400px;
+  background-color: #fcf9f9;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5%;
+}
+
+#auth-title-span {
+  font-size: 70px;
+  position: absolute;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  top: 40px;
+}
+
+#auth-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 5px;
+}
+
+#username-span {
+  position: absolute;
+  top: 180px;
+  left: 15px;
+  font-size: 25px;
+}
+
+#username-input {
+  position: absolute;
+  top: 210px;
+  left: 15px;
+  height: 30px;
+  width: 360px;
+  border-radius: 5px;
+}
+
+#pass-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 5px;
+}
+
+#password-span {
+  position: absolute;
+  left: 15px;
+  font-size: 25px;
+  top: 260px;
+}
+
+#password-input {
+  position: absolute;
+  top: 290px;
+  left: 15px;
+  height: 30px;
+  width: 360px;
+  border-radius: 5px;
+}
+
+#login-btn {
+  position: absolute;
+  height: 40px;
+  bottom: 20px;
+  right: 45px;
+}
+
+#register-link-btn {
+  position: absolute;
+  height: 40px;
+  bottom: 20px;
+  left: 45px;
+}
+
+.auth-button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.15em solid #141414;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 300;
+  color: #646464;
+  text-align: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.auth-button:hover {
+  cursor: pointer;
+  color: #fcfcfc;
+  background-color: #3b3b3b;
+}
+
+@media all and (max-width: 30em) {
+  .auth-button {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+/*# sourceMappingURL=Auth.css.map */
