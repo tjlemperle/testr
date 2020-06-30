@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
-import axios from 'axios'
+// import axios from 'axios'
 
 import './User.scss'
 
@@ -8,10 +8,10 @@ function User(props){
 
     const [changePassword, setToggle] = useState(false)
     const [changeEmail, setEmailToggle] = useState(false)
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [newPassword, setNewPassword] = useState('')
-    const [verifyNewPassword, setVerifyNewPassword] = useState('')
+    // const [email, setEmail] = useState('')
+    // const [password, setPassword] = useState('')
+    // const [newPassword, setNewPassword] = useState('')
+    // const [verifyNewPassword, setVerifyNewPassword] = useState('')
 
 
     

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import axios from 'axios'
 
@@ -12,18 +12,18 @@ function AdminClass(props){
         // const [addClassByID, setAddClassByID] = useState('') use this to add a student id to class on next page
 
     useEffect(() => {
-        getAdminTests()
+        // getAdminTests()
         // console.log(props.match.params.classid)
-    }, [])
-
-    const getAdminTests = () => {
         axios.get(`/api/adminclass/${props.match.params.classid}`)
         .then( res => {
             setTests(res.data)
             setLoading(false)
         })
         .catch(err => console.log(err))
-    }
+    }, [props])
+
+    // const getAdminTests = () => {
+    // }
 
     const mappedTests = tests.map((element, index) => {
         return(
