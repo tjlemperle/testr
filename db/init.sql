@@ -99,22 +99,22 @@ insert into test_questions(test_question, test_id) values ('What is 2 x 8?', 1);
 -- insert into test_questions(test_question_id, test_question, test_id) values (12, '36/2', 3);
 
 
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (1, false, '3', 1);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (2, true, '4', 1);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (3, false, '5', 1);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (4, false, '6', 1);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (5, false, '8', 2);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (6, false, '2', 2);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (7, true, '6', 2);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (8, false, '3', 2);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (9, true, '8', 3);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (10, false, '3', 3);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (11, false, '12', 3);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (12, false, '4', 3);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (13, false, '4', 4);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (14, false, '6', 4);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (15, false, '16', 4);
--- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (16, true, '10', 4);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (false, '3', 1);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (true, '4', 1);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (false, '5', 1);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (false, '6', 1);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (false, '8', 2);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (false, '2', 2);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (true, '6', 2);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (false, '3', 2);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (true, '8', 3);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (false, '3', 3);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (false, '12', 3);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (false, '4', 3);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (false, '4', 4);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (false, '6', 4);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (false, '16', 4);
+-- insert into test_question_options(test_question_answer, test_question_option, test_question_id) values (true, '10', 4);
 
 -- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (17, false, 'there', 5);
 -- insert into test_question_options(test_question_option_id, test_question_answer, test_question_option, test_question_id) values (18, true, 'no where', 5);

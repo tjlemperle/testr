@@ -20,8 +20,14 @@ function Auth(props) {
           console.log(username, password)
         axios.post('/auth/login', {username, password})
         .then(res => {
+            console.log(res.data)
             props.setUser(res.data)
-            props.history.push('/dashboard')
+            if(res.data.role === 'STUDENT'){
+                props.history.push('/dashboard')
+            } else if(res.data.role ==='TEACHER'){
+                props.history.push('/admindashboard')
+            }
+            
         })
         .catch(err => {
             console.log(err)
