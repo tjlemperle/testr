@@ -52,3 +52,12 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+#add-class-btn {
+  background-color: #BEFF9F;
+}
+
+#add-class-btn:hover {
+  background-color: #3b3b3b;
+}
+/*# sourceMappingURL=StudenDash.css.map */

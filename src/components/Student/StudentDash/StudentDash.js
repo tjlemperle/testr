@@ -53,6 +53,7 @@ function StudentDash(props){
     <div>
         <section id='dashboard-container'>
             <span id='classes-title-span'>Classes</span>
+            {/* <div style={{ width: '60%', height:'1px', background: 'black' }}></div> */}
             <div>
                 <input 
                     type='text'
@@ -61,8 +62,10 @@ function StudentDash(props){
                     onChange={e => setAddClassID(e.target.value)}
                 />
                 <button
+                    className='auth-button'
+                    id='add-class-btn'
                     onClick={addClass}
-                >Add Class</button>
+                >+ Add Class</button>
             </div>
         {isLoading === true ?
         

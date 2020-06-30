@@ -1,12 +1,25 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
+import axios from 'axios'
+
+import './User.scss'
 
 function User(props){
 
     const [changePassword, setToggle] = useState(false)
+    const [changeEmail, setEmailToggle] = useState(false)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [newPassword, setNewPassword] = useState('')
+    const [verifyNewPassword, setVerifyNewPassword] = useState('')
+
+
+    
 
     return (
+    <div id='user-container'>
         <section id='user-info-container'>
+            <span id='user-settings-span'>User Information</span>
             <section id='user-info-inputs'>
                 <div>
                     <span>First Name: </span>
@@ -16,28 +29,73 @@ function User(props){
                     <span>Last Name: </span>
                     <span>{props.users.last_name}</span>
                 </div>
-                <div>
+                <div id='email-container'>
                     <span>Email: </span>
                     <span>{props.users.user_email}</span>
-                    <button>Update Email</button>
-                </div>
-                { changePassword === false 
-                ?
-                <div>
+                    {changeEmail === false 
+                    ?
                     <button
-                        onClick={setToggle}
-                    >Change Password</button>
-                </div>
+                        className='auth-button'
+                        onClick={setEmailToggle}                   
+                    >Update Email</button>
+                    :
+                    <div>
 
-                :
+                        <input 
+                        />
+                        <div>
+                            <button
+                                className='auth-button'
+                                onClick={() => setEmailToggle(false)}
+                            >Cancel</button>
+                            <button
+                                className='auth-button'
+                            >Submit</button>
+                        </div>
+                    </div>
+                    }
+                </div>
 
                 <div>
-                    <input />
-                    <input />
+                    { changePassword === false 
+                    ?
+                    <div>
+                        <button
+                            className='auth-button'
+                            onClick={setToggle}
+                            >Change Password</button>
+                    </div>
+
+                    :
+
+                    <div>
+                    <div>
+                        <span>Old Password</span>
+                        <input />
+                    </div>
+                    <div>
+                        <span>New Password</span>
+                        <input />
+                    </div>
+                    <div>
+                        <span>Re-enter New Password</span>
+                        <input />
+                    </div>
+                    <div>
+                        <button
+                            className='auth-button'
+                            onClick={() => setToggle(false)}
+                            >Cancel</button>
+                        <button
+                            className='auth-button'
+                        >Submit</button>
+                    </div>
+                    </div>
+                    }
                 </div>
-                }
             </section>
         </section>
+    </div>
     )
 }
 
