@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import './StudentTest.scss'
 
+
 function StudentTest(props) {
 
     const [test, setTest] = useState([])
@@ -31,7 +32,9 @@ function StudentTest(props) {
         .then(res => {
             setTest(groupBy(res.data))
             setLoading(false)
-
+            // setState({
+            //     test: groupBy(res.data)
+            // })
         })
         .catch(err => console.log(err))
 
@@ -48,15 +51,15 @@ function StudentTest(props) {
         })    
     }
     
+    const submitTest = () => {
 
-    
+        axios.post('/api/test', {test})
 
-    // const questions = groupBy(test, 'test_question_id')
-    // const questionsLength = Object.keys(questions).length
 
-    // console.log(questions)
-    // console.log(questionsLength)
+    }
+
     console.log(test)
+    
 
     return(
         <div id='test'>
@@ -124,7 +127,7 @@ function StudentTest(props) {
                         <button
                             className='auth-button'
                             id='test-btn-submit'
-                            // onClick={() => setindex(index += 1)}
+                            onClick={submitTest}
                         >Submit</button>
                         :
                         null

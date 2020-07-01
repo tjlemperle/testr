@@ -10,17 +10,22 @@ import './StudentClass.scss'
 function StudentClass(props) {
 
     const [tests, setTests] = useState([])
+    const [testsTaken, setTestsTaken] = useState([])
     const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
         getClassInfo()
-        console.log(props.match.params.classid)
-    })
+ 
+    }, [])
+
+
 
     const getClassInfo = () => {
         axios.get(`/api/class/${props.match.params.classid}`)
         .then(res => {
-            setTests(res.data)
+            console.log(res.data)
+            setTests(res.data.testsAvailable)
+            setTestsTaken(res.data.testsTaken)
             setLoading(false)
         })
         .catch(err => console.log(err))
@@ -32,6 +37,17 @@ function StudentClass(props) {
             <div className='student-class-test' key={index}>          
                 <span>{element.test_name}</span>
                 <span>{element.end_date}</span>
+            </div>
+            </Link>
+        )
+    })
+
+
+    const mappedTestsTaken = testsTaken.map((element, index) => {
+        return(
+            <Link to={`/test/${element.test_id}`}>
+            <div className='student-class-test' key={index}>          
+                <span>{element.test_name}</span>
             </div>
             </Link>
         )
@@ -52,6 +68,10 @@ function StudentClass(props) {
             <div>
             <span>{tests[0].class_name}</span>
                 {mappedTests}
+                <div>
+                    {mappedTestsTaken}
+                </div>
+
             </div>
 
             }

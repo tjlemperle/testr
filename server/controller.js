@@ -84,10 +84,33 @@ module.exports = {
         const {user_id} = req.session.user
         const {class_id} = req.params
 
-        let tests = await db.student.get_class_info(class_id, user_id)
+        let testsAvailable = await db.student.get_class_info(class_id, user_id)
 
-        res.status(200).send(tests)
+        let testsTaken = await db.student.tests_taken(user_id)
+
+        for (var i = 0, len = testsTaken.length; i < len; i++) { 
+            for (var j = 0, len2 = testsAvailable.length; j < len2; j++) { 
+                if (testsTaken[i].test_id === testsAvailable[j].test_id) {
+                    testsAvailable.splice(j, 1);
+                    len2=testsAvailable.length;
+                }
+            }
+        }
+        console.log(testsAvailable, testsTaken)
+
+        res.status(200).send({testsAvailable, testsTaken})
     },
+
+    // getAllTestsTaken: async (req, res) => {
+    //     const db = req.app.get('db')
+
+    //     const {user_id} = req.session.user
+    //     const {class_id} = req.params
+
+    //     let tests = await db.student.tests_taken(class_id, user_id)
+
+    //     res.status(200).send(tests)
+    // },
 
     getSingleTest: async (req, res) => {
         const db = req.app.get('db')
@@ -130,5 +153,24 @@ module.exports = {
 
         res.sendStatus(200)
 
+    },
+
+    submitTestAnswers: (req, res) => {
+        const db = req.app.get('db')
+
+        console.log(req.body)
+
+        const {user_id} = req.session.user
+        const {test} = req.body
+
+        test.forEach(element => {
+            // console.log(element.test_question_id, element.student_response)
+            db.student.submit_test_answer(element.test_question_id, element.student_response, user_id)
+        });
+
+
+        res.sendStatus(200)
     }
+
+
 }
