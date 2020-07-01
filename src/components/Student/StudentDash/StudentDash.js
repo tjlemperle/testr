@@ -71,8 +71,8 @@ function StudentDash(props){
         
         <span id='loading-span'>Please wait...</span>
         :
-        <div>
-        {mappedClasses}
+        <div id='mapped-container'>
+            {mappedClasses}
         </div>    
         }
         </section>
