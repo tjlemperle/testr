@@ -4,4 +4,5 @@ join test_questions tq on tq.test_question_id = tqsa.test_question_id
 join tests t on tq.test_id = t.test_id
 join class cl on t.class_id = cl.class_id
 where user_id = $1
+and cl.class_id = $2
 

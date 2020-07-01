@@ -86,7 +86,7 @@ module.exports = {
 
         let testsAvailable = await db.student.get_class_info(class_id, user_id)
 
-        let testsTaken = await db.student.tests_taken(user_id)
+        let testsTaken = await db.student.tests_taken(user_id, class_id)
 
         for (var i = 0, len = testsTaken.length; i < len; i++) { 
             for (var j = 0, len2 = testsAvailable.length; j < len2; j++) { 
@@ -100,17 +100,6 @@ module.exports = {
 
         res.status(200).send({testsAvailable, testsTaken})
     },
-
-    // getAllTestsTaken: async (req, res) => {
-    //     const db = req.app.get('db')
-
-    //     const {user_id} = req.session.user
-    //     const {class_id} = req.params
-
-    //     let tests = await db.student.tests_taken(class_id, user_id)
-
-    //     res.status(200).send(tests)
-    // },
 
     getSingleTest: async (req, res) => {
         const db = req.app.get('db')
