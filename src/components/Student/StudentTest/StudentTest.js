@@ -9,7 +9,7 @@ function StudentTest(props) {
     const [test, setTest] = useState([])
     const [isLoading, setLoading] = useState(true)
     const [index, setIndex] = useState(0)
-    let [questionNum, setQuestionNum] = useState(1)
+    // let [questionNum, setQuestionNum] = useState(1)
 
     const groupBy = (array) => {
         
@@ -68,68 +68,68 @@ function StudentTest(props) {
             </div>
             :
             <div id='test-container'>
-                <div className='questions-container'>
-                    <div>       
-                        <span id='test-name-span'>
-                            {test[index].test_name}
-                        </span>                    
-                        <div>
-                            <span id='question-num'>Question {questionNum}</span>
-                        </div>
+                <div className='questions-container'>   
+                    <span id='test-name-span'>
+                        {test[index].test_name}
+                    </span>                    
+                    <div>
+                        <span id='question-num'>Question {index + 1}</span>
+                    </div>
+                    <div id='test-question'>
                         <div id='question-container'>
                             <span>{test[index].test_question}</span>
                         </div>
-                        <div id='options'>
-                            {test[index].options.map(option => {
-                                return(
-                                    <div className='option-container'>
-                                        <div className={`test-question-option ${test[index].student_response === option.test_question_option_id ? 'test-question-option-selected': ''}`} 
-                                            onClick={() => recordStudentAnswer(option.test_question_option_id)}
-                                        > 
-                                            
-                                        </div>
-                                        <div>
-                                            <span>{option.test_question_option}</span>
-                                        </div>
+                    </div>
+                    <div id='options'>
+                        {test[index].options.map(option => {
+                            return(
+                                <div className='option-container'>
+                                    <div className={`test-question-option ${test[index].student_response === option.test_question_option_id ? 'test-question-option-selected': ''}`} 
+                                        onClick={() => recordStudentAnswer(option.test_question_option_id)}
+                                    > 
+                                        
                                     </div>
-                                )
-                            })
-                            }
-                            
-                            {/* <span>{Object.keys(questions)}</span> */}
-                        </div>   
-                        <div>
-                            {index > 0 
-                            ? 
-                            <button  
-                                className='auth-button'
-                                id='test-btn-prev'
-                                onClick={() => setIndex(index - 1)}
-                            >Previous</button>
-                            : 
-                            null
-                            }
-                            {index < test.length && index !== test.length -1
-                            ? 
-                            <button
-                                className='auth-button'
-                                id='test-btn-next'
-                                onClick={() => setIndex(index + 1)}
-                            >Next</button> 
-                            : 
-                            null
-                            }
-                            {index === test.length - 1
-                            ?
-                            <button
-                                className='auth-button'
-                                id='test-btn-submit'
-                                // onClick={() => setindex(index += 1)}
-                            >Submit</button>
-                            :
-                            null
-                            }
-                        </div>
+                                    <div>
+                                        <span>{option.test_question_option}</span>
+                                    </div>
+                                </div>
+                            )
+                        })
+                        }
+                        
+                        {/* <span>{Object.keys(questions)}</span> */}
+                    </div>   
+                    <div className='test-btns'>
+                        {index > 0 
+                        ? 
+                        <button  
+                            className='auth-button'
+                            id='test-btn-prev'
+                            onClick={() => setIndex(index - 1)}
+                        >Previous</button>
+                        : 
+                        null
+                        }
+                        {index < test.length && index !== test.length -1
+                        ? 
+                        <button
+                            className='auth-button'
+                            id='test-btn-next'
+                            onClick={() => setIndex(index + 1)}
+                        >Next</button> 
+                        : 
+                        null
+                        }
+                        {index === test.length - 1
+                        ?
+                        <button
+                            className='auth-button'
+                            id='test-btn-submit'
+                            // onClick={() => setindex(index += 1)}
+                        >Submit</button>
+                        :
+                        null
+                        }
                     </div>
                 </div>
             </div>

@@ -18,10 +18,12 @@
 }
 
 #test-container {
-  position: fixed;
+  position: absolute;
   top: 10vh;
   height: 80vh;
+  min-height: 700px;
   width: 50%;
+  min-width: 500px;
   background-color: #fcf9f9;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -37,6 +39,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding: 5%;
+  left: 25%;
 }
 
 #test-name-span {
@@ -68,9 +71,43 @@
           align-items: center;
   border-radius: 18px;
   margin-top: 10px;
-  background-color: rgba(131, 131, 131, 0.74);
+  background-color: rgba(197, 197, 197, 0.438);
   width: 80%;
   height: 65px;
+}
+
+#question-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  width: 80%;
+  height: 250px;
+  background-color: rgba(197, 197, 197, 0.438);
+}
+
+#test-question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  top: 10%;
 }
 
 #options {
@@ -91,35 +128,17 @@
 
 .test-question-option {
   position: absolute;
-  border: solid black 3px;
-  left: 80px;
-  height: 50px;
-  border-radius: 15px;
-  width: 10%;
+  width: 63%;
+  height: 65px;
+  border-radius: 18px;
+}
+
+.test-question-option:hover {
+  cursor: pointer;
 }
 
 .test-question-option-selected {
-  background-color: black;
-}
-
-#question-container {
-  position: relative;
-  -ms-flex-item-align: center;
-      align-self: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 20px;
-  left: 78px;
-  height: 250px;
-  width: 80%;
-  background-color: rgba(131, 131, 131, 0.74);
+  border: solid black 4px;
 }
 
 #test-btn-next {
@@ -137,5 +156,6 @@
 #test-btn-submit {
   position: absolute;
   bottom: 20px;
+  left: 45%;
 }
 /*# sourceMappingURL=StudentTest.css.map */

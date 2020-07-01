@@ -1,5 +1,6 @@
 #nav-container {
   height: 100vh;
+  min-height: 400px;
   width: 200px;
   position: fixed;
   left: 0px;
@@ -118,3 +119,4 @@
 .link:link, .link:visited {
   font: black;
 }
+/*# sourceMappingURL=Nav.css.map */

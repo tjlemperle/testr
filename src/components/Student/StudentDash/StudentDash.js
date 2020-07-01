@@ -65,7 +65,7 @@ function StudentDash(props){
                     className='auth-button'
                     id='add-class-btn'
                     onClick={addClass}
-                >+ Add Class</button>
+                >+ Join Class</button>
             </div>
         {isLoading === true ?
         

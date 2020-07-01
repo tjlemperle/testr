@@ -13,17 +13,20 @@
 }
 
 #test-container{
-    position: fixed;
+    position: absolute;
     top: 10vh;
     height: 80vh;
+    min-height: 700px;
     width: 50%;
+    min-width: 500px;
     background-color: rgb(252, 249, 249);
     box-sizing: border-box;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5%
+    padding: 5%;
+    left: 25%;
 }
 
 #test-name-span{
@@ -47,9 +50,28 @@
     align-items: center;
     border-radius: 18px;
     margin-top: 10px;
-    background-color: rgba(131, 131, 131, 0.74);
+    background-color: rgba(197, 197, 197, 0.438);
     width: 80%;
     height: 65px;
+}
+
+#question-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 80%;
+    height: 250px;
+    background-color: rgba(197, 197, 197, 0.438);
+}
+
+#test-question{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 10%;
 }
 
 #options{
@@ -61,30 +83,22 @@
 
 .test-question-option{
     position: absolute;
-    border: solid black 3px;
-    left: 80px;
-    height: 50px;
-    border-radius: 15px;
-    width: 10%;
+    width: 63%;
+    height: 65px;
+    border-radius: 18px;
+}
+
+
+.test-question-option:hover{
+    cursor: pointer;
 }
 
 .test-question-option-selected{
-    background-color: black;
+    border: solid black 4px;
+    // background-color:#3b3b3b;
 }
 
-#question-container{
-    position: relative;
-    align-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    left: 78px;
-    height: 250px;
-    width: 80%;
-    background-color: rgba(131, 131, 131, 0.74);
 
-}
 
 #test-btn-next{
     position: absolute;
@@ -101,4 +115,5 @@
 #test-btn-submit{
     position: absolute;
     bottom: 20px;
+    left: 45%;
 }
