@@ -29,7 +29,7 @@ class Nav extends Component{
     }
 
     render(){
-    // console.log(this.props)
+    console.log(this.props)
         return (
         <section id='nav-container'>             
             <section id='nav-links-container'>
@@ -49,16 +49,31 @@ class Nav extends Component{
                     </Link>
                 </section>
                 <section id='nav-dashboard'>
+                    {this.props.users.role === 'TEACHER'
+                    ?
+                    <Link className='link' to='/admindashboard'>
+                        <div id='dashboard-link-container'>
+                            <img
+                                src='https://icons-for-free.com/iconfiles/png/512/dashboard-1320568680781126244.png'
+                                alt='dashboard'
+                                id='dashboard-silhoutte'
+                                />
+                            <span>Dashboard</span>
+                        </div>
+                    </Link>
+
+                    :
                     <Link className='link' to='/dashboard'>
                         <div id='dashboard-link-container'>
                             <img
                                 src='https://icons-for-free.com/iconfiles/png/512/dashboard-1320568680781126244.png'
                                 alt='dashboard'
                                 id='dashboard-silhoutte'
-                            />
+                                />
                             <span>Dashboard</span>
                         </div>
                     </Link>
+                    }
                 </section>
 
             </section>
