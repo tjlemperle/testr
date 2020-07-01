@@ -39,9 +39,16 @@
 
 #question-num{
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 30px;
+    // left: 40%;
     font-size: 40px;
+}
+
+#num{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .option-container{
@@ -64,6 +71,7 @@
     width: 80%;
     height: 250px;
     background-color: rgba(197, 197, 197, 0.438);
+    margin-bottom: 20px;
 }
 
 #test-question{

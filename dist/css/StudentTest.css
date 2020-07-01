@@ -54,9 +54,24 @@
 
 #question-num {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 30px;
   font-size: 40px;
+}
+
+#num {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .option-container {
@@ -91,6 +106,7 @@
   width: 80%;
   height: 250px;
   background-color: rgba(197, 197, 197, 0.438);
+  margin-bottom: 20px;
 }
 
 #test-question {

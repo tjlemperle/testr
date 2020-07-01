@@ -9,7 +9,6 @@ function StudentTest(props) {
     const [test, setTest] = useState([])
     const [isLoading, setLoading] = useState(true)
     const [index, setIndex] = useState(0)
-    // let [questionNum, setQuestionNum] = useState(1)
 
     const groupBy = (array) => {
         
@@ -72,7 +71,7 @@ function StudentTest(props) {
                     <span id='test-name-span'>
                         {test[index].test_name}
                     </span>                    
-                    <div>
+                    <div id='num'>
                         <span id='question-num'>Question {index + 1}</span>
                     </div>
                     <div id='test-question'>
