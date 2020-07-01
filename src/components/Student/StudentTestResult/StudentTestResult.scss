@@ -101,20 +101,12 @@
     cursor: pointer;
 }
 
-.test-question-option-selected{
+.test-question-option-correct{
     border: solid black 4px;
     // background-color:#3b3b3b;
 }
 
-.result-option-container{
-    position: relative;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 18px;
-}
+
 
 #test-btn-next{
     position: absolute;

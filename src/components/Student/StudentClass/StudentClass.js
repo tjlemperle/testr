@@ -45,7 +45,7 @@ function StudentClass(props) {
 
     const mappedTestsTaken = testsTaken.map((element, index) => {
         return(
-            <Link to={`/test/${element.test_id}`}>
+            <Link to={`/test-result/${element.test_id}`}>
             <div className='student-class-test' key={index}>          
                 <span>{element.test_name}</span>
             </div>

@@ -9,6 +9,7 @@ import StudentTest from './components/Student/StudentTest/StudentTest'
 import AdminDash from './components/Admin/AdminDash/AdminDash'
 import AdminClass from './components/Admin/AdminClass/AdminClass'
 import AdminCreateTest from './components/Admin/AdminCreateTest/AdminCreateTest'
+import StudentTestResult from './components/Student/StudentTestResult/StudentTestResult'
 
 export default (
     <Switch>
@@ -21,5 +22,6 @@ export default (
         <Route path='/dashboard' component={StudentDash} />
         <Route path='/class/:classid' component={StudentClass} />
         <Route path='/test/:testid' component={StudentTest} />
+        <Route path='/test-result/:testid' component={StudentTestResult} />
     </Switch>
 )

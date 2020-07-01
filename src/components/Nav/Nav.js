@@ -33,9 +33,9 @@ class Nav extends Component{
         return (
         <section id='nav-container'>             
             <section id='nav-links-container'>
-                <div id='arrow-container'>
+                {/* <div id='arrow-container'>
                     <span id='arrow'>←</span>
-                </div>
+                </div> */}
                 <section id='nav-user-info'>
                     <Link className='link' to='/user'>
                         <div id='account-link-container'>

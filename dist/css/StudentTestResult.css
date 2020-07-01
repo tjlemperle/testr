@@ -153,24 +153,8 @@
   cursor: pointer;
 }
 
-.test-question-option-selected {
+.test-question-option-correct {
   border: solid black 4px;
-}
-
-.result-option-container {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 18px;
 }
 
 #test-btn-next {
@@ -190,4 +174,4 @@
   bottom: 20px;
   left: 45%;
 }
-/*# sourceMappingURL=StudentTest.css.map */
+/*# sourceMappingURL=StudentTestResult.css.map */

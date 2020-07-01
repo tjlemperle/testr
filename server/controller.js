@@ -159,6 +159,21 @@ module.exports = {
 
 
         res.sendStatus(200)
+    },
+
+    singleTestResult: async (req, res) => {
+        const db = req.app.get('db')
+
+        const {user_id} = req.session.user
+        const {test_id} = req.params
+
+        console.log(test_id, user_id)
+
+        let results = await db.student.single_test_results(test_id, user_id)
+
+        console.log(results)
+
+        res.status(200).send(results)
     }
 
 
