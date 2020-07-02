@@ -26,7 +26,7 @@ function AdminCreateTest(props){
     const [answer4, setAnswer4] = useState(false)
     // const [testArray, setTestArray] = useState([])
     const [testQuestionsArray, setTestQuestionsArray] = useState([])
-    const [testQuestionOptionsArray, setTestQuestionOptionsArray] = useState([])
+    // const [testQuestionOptionsArray, setTestQuestionOptionsArray] = useState([])
 
 
     useEffect(() => {
@@ -60,8 +60,7 @@ function AdminCreateTest(props){
             axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option3, test_question_answer: answer3}),
             axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option4, test_question_answer: answer4})   
         ])
-        .then(
-            
+        .then(        
             setTestQuestion(''),
             setOption1(''),
             setOption2(''),
@@ -73,11 +72,6 @@ function AdminCreateTest(props){
             setAnswer4(false),
             setIndex(index + 1)
             )
-
-    
-
-
-
     }
 
     console.log(testQuestionsArray)
