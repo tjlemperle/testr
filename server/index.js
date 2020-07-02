@@ -50,6 +50,8 @@ app.get('/api/test-result/:test_id', ctrl.singleTestResult)
 // //admin
 app.get('/api/adminclasses', adminCtrl.getAdminClasses)
 app.get('/api/adminclass/:class_id', adminCtrl.getAllAdminTests)
+app.post('/api/createtestid', adminCtrl.createTestId)
+app.get('/api/gettestbyname/:testname', adminCtrl.getTestByName )
 // app.get('/api/classes/students', ctrl.getClassStudents)
 // app.post('/api/createTest', ctrl.createTest)
 // app.put('/api/test/:id', ctrl.updateTest)

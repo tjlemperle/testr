@@ -18,7 +18,7 @@ export default (
         <Route path='/user' component={User} />
         <Route path='/admindashboard' component={AdminDash} />
         <Route path='/adminclass/:classid' component={AdminClass} />
-        <Route path='/admincreatetest' component={AdminCreateTest} />
+        <Route path='/admincreatetest/:testname' component={AdminCreateTest} />
         <Route path='/dashboard' component={StudentDash} />
         <Route path='/class/:classid' component={StudentClass} />
         <Route path='/test/:testid' component={StudentTest} />

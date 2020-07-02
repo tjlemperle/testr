@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import axios from 'axios'
 
@@ -9,6 +9,7 @@ function AdminClass(props){
 
     const [tests, setTests] = useState([])
     const [isLoading, setLoading] = useState(true)
+    const [testName, setTestName] = useState('')
         // const [addClassByID, setAddClassByID] = useState('') use this to add a student id to class on next page
 
     useEffect(() => {
@@ -35,14 +36,31 @@ function AdminClass(props){
     })
 
 
+    const createTest = () => {
+        let class_id = props.match.params.classid
 
+        console.log(testName, class_id)
+
+        axios.post('/api/createtestid', {testName, class_id})
+        .then(res => {
+            props.history.push(`/admincreatetest/${testName}`)
+        })
+    }
 
     return(
         <div>
             <div>
-                <Link to='/admincreatetest'>
-                    <button>Creat Test</button>
-                </Link>
+                <div>
+
+                    <input 
+                        onChange={e => setTestName(e.target.value)}
+                    />
+
+                    <button
+                        onClick={createTest}
+                        >Create Test</button>
+                </div>
+                
             </div>
             <span>Tests</span>
         {isLoading === true
