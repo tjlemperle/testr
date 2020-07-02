@@ -47,5 +47,31 @@ module.exports = {
         let testInfo = await db.admin.get_test_by_name(testname)
 
         res.status(200).send(testInfo)
+    },
+
+    getQuestionId: async (req, res) => {
+        const db = req.app.get('db')
+
+        const {test_id, test_question} = req.body
+
+        console.log(test_id, test_question)
+
+        let test_question_id = await db.admin.get_question_id(test_id, test_question)
+
+        console.log(test_question_id)
+
+        res.status(200).send(test_question_id)
+    },
+
+    submitQuestionOption: (req, res) => {
+        const db = req.app.get('db')
+
+        const {test_question_id, test_question_option, test_question_answer} = req.body
+
+        console.log(test_question_id, test_question_option, test_question_answer)
+
+        db.admin.submit_question_option(test_question_id, test_question_answer, test_question_option)
+
+        res.sendStatus(200)
     }
 }

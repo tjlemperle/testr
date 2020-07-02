@@ -44,13 +44,39 @@ function AdminCreateTest(props){
 
     console.log(testName, testID, classID)
 
-    const submitQuestion = () => {
- 
+    const submitQuestion = async () => {
+
+     
         setTestQuestionsArray(testQuestionsArray => [...testQuestionsArray, testQuestion])
+        
+        const result = await axios.post(`/api/submitquestion`, {test_id: testID, test_question: testQuestion})
+
+        console.log(result)
+        console.log(result.data[0].test_question_id)
+        
+        axios.all([
+            axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option1, test_question_answer: answer1}),
+            axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option2, test_question_answer: answer2}),
+            axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option3, test_question_answer: answer3}),
+            axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option4, test_question_answer: answer4}),   
+        ])
+        
         setTestQuestion('')
+        setOption1('')
+        setOption2('')
+        setOption3('')
+        setOption4('')
+        setAnswer1(false)
+        setAnswer2(false)
+        setAnswer3(false)
+        setAnswer4(false)
+    
+
+
+
     }
     console.log(testQuestionsArray)
-
+    console.log(answer1)
     const submitTest = () => {
     
     }
