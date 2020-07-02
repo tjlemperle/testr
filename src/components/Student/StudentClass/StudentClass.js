@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {setUser} from '../../../ducks/userReducer'
 import axios from 'axios'
+import {Bar} from 'react-chartjs-2'
+
 
 import './StudentClass.scss'
 
@@ -12,14 +14,15 @@ function StudentClass(props) {
     const [tests, setTests] = useState([])
     const [testsTaken, setTestsTaken] = useState([])
     const [isLoading, setLoading] = useState(true)
+    // const [labels, setLabels] = useState([])
+    // const [data, setData] = useState([])
 
     useEffect(() => {
         getClassInfo()
- 
     }, [])
-
-
-
+    
+    
+    
     const getClassInfo = () => {
         axios.get(`/api/class/${props.match.params.classid}`)
         .then(res => {
@@ -42,7 +45,6 @@ function StudentClass(props) {
         )
     })
 
-
     const mappedTestsTaken = testsTaken.map((element, index) => {
         return(
             <Link to={`/test-result/${element.test_id}`}>
@@ -53,7 +55,23 @@ function StudentClass(props) {
         )
     })
 
-    console.log(tests)
+    const dataObj = {
+        labels: ['test1', 'test2'],
+        datasets: [
+            {
+                label: 'Test Scores',
+                backgroundColor: 'rgba(255,99,132,0.2)',
+                borderColor: 'rgba(255,99,132,1)',
+                borderWidth: 1,
+                hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+                hoverBorderColor: 'rgba(255,99,132,1)',
+                data: [23,65]
+            }
+        ]
+    }
+
+
+    console.log(tests, testsTaken)
 
     return(
         
@@ -71,9 +89,14 @@ function StudentClass(props) {
                 <div>
                     {mappedTestsTaken}
                 </div>
+                <Bar 
+                    data= {dataObj}
+                    width= {20}
+                    height = {30}
+                    options= {{maintainAspectRatio: false}}
 
+                />
             </div>
-
             }
         </div>
         )

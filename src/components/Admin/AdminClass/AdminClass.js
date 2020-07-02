@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import axios from 'axios'
 
@@ -35,20 +35,16 @@ function AdminClass(props){
     })
 
 
+
+
     return(
         <div>
+            <div>
+                <Link to='/admincreatetest'>
+                    <button>Creat Test</button>
+                </Link>
+            </div>
             <span>Tests</span>
-            {/* <div>
-                <input 
-                    type='text'
-                    placeholder='Enter Class ID'
-                    value={addClassID}
-                    onChange={e => setAddClassID(e.target.value)}
-                />
-                <button
-                    onClick={addClass}
-                >Add Class</button>
-            </div> */}
         {isLoading === true
         ?
         
