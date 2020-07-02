@@ -27,7 +27,7 @@ function AdminDash(props){
     const mappedClasses = classes.map((element, index) => {
         return(
             <Link to={`/adminclass/${element.class_id}`}>              
-            <div className='student-class-dash' key={index}>
+            <div className='student-class-dash' style={{"marginTop": "20px"}} key={index}>
                 <span>{element.class_name}</span>
                 <div className='teacher-name'>
                     <span>{element.first_name}</span>
@@ -39,14 +39,14 @@ function AdminDash(props){
     })
 
     return(
-        <section id='dashboard-container'>
+        <section id='admin-dashboard-container'>
             <span id='classes-title-span'>Classes</span>
 
             {isLoading === true ?
             
-            <span id='loading-span'>Please wait...</span>
+            <span id='admin-loading-span'>Please wait...</span>
             :
-            <div>
+            <div className='mapped-container'>
             {mappedClasses}
             </div>    
             }

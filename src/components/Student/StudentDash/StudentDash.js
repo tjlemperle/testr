@@ -56,6 +56,7 @@ function StudentDash(props){
             {/* <div style={{ width: '60%', height:'1px', background: 'black' }}></div> */}
             <div>
                 <input 
+                    className='class-input'
                     type='text'
                     placeholder='Enter Class ID'
                     value={addClassID}

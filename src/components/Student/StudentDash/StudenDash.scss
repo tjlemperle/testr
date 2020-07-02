@@ -26,8 +26,18 @@
     align-items: center;
     justify-content: space-evenly;
     box-sizing: border-box;
-    background-color: rgb(170, 170, 170);
+    background-color: rgba(197, 197, 197, 0.438);
     border-radius: 10px;
+}
+
+.student-class-dash:hover{
+    background-color: rgb(170,170,170)
+}
+
+.class-input{
+    height: 30px;
+    width: 360px;
+    border-radius: 5px;
 }
 
 .teacher-name{
