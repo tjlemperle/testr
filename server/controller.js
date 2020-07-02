@@ -158,7 +158,7 @@ module.exports = {
         });
 
 
-        res.sendStatus(200)
+        res.status(200).send(test[0].class_id)
     },
 
     singleTestResult: async (req, res) => {

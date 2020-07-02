@@ -67,7 +67,7 @@ function StudentTestResult(props){
                                     {option.test_question_answer === true
 
                                     ?
-                                    <div className='result-option-container' style={{"backgroundColor": "green"}}>
+                                    <div className='result-option-container' style={{"backgroundColor": "#7FFF00"}}>
                                         <div>{option.test_question_option}</div>
                                     </div>
                                     :

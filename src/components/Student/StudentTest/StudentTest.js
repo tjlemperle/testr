@@ -53,7 +53,10 @@ function StudentTest(props) {
     
     const submitTest = () => {
 
+        let classid = test[0].options[0].class_id
+
         axios.post('/api/test', {test})
+        .then(props.history.push(`/class/${classid}`))
 
 
     }
