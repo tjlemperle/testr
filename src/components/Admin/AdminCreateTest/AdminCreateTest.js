@@ -58,27 +58,60 @@ function AdminCreateTest(props){
             axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option1, test_question_answer: answer1}),
             axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option2, test_question_answer: answer2}),
             axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option3, test_question_answer: answer3}),
-            axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option4, test_question_answer: answer4}),   
+            axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option4, test_question_answer: answer4})   
         ])
-        
-        setTestQuestion('')
-        setOption1('')
-        setOption2('')
-        setOption3('')
-        setOption4('')
-        setAnswer1(false)
-        setAnswer2(false)
-        setAnswer3(false)
-        setAnswer4(false)
+        .then(
+            
+            setTestQuestion(''),
+            setOption1(''),
+            setOption2(''),
+            setOption3(''),
+            setOption4(''),
+            setAnswer1(false),
+            setAnswer2(false),
+            setAnswer3(false),
+            setAnswer4(false),
+            setIndex(index + 1)
+            )
+
     
 
 
 
     }
+
     console.log(testQuestionsArray)
     console.log(answer1)
-    const submitTest = () => {
+
+
+    const submitTest = async () => {
     
+        setTestQuestionsArray(testQuestionsArray => [...testQuestionsArray, testQuestion])
+        
+        const result = await axios.post(`/api/submitquestion`, {test_id: testID, test_question: testQuestion})
+
+        console.log(result)
+        console.log(result.data[0].test_question_id)
+        
+        axios.all([
+            axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option1, test_question_answer: answer1}),
+            axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option2, test_question_answer: answer2}),
+            axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option3, test_question_answer: answer3}),
+            axios.post(`/api/submitquestionoption`, {test_question_id: result.data[0].test_question_id, test_question_option: option4, test_question_answer: answer4})   
+        ])
+        .then(
+            
+            setTestQuestion(''),
+            setOption1(''),
+            setOption2(''),
+            setOption3(''),
+            setOption4(''),
+            setAnswer1(false),
+            setAnswer2(false),
+            setAnswer3(false),
+            setAnswer4(false),
+            props.history.push(`/adminclass/${classID}`)
+            )
     }
 
 
@@ -111,10 +144,13 @@ function AdminCreateTest(props){
                             <div>
                                 <input 
                                     onClick={() => setAnswer1(true)}
+                                    value={answer1}
+                                    checked={answer1}
                                     type='radio'
                                 />
                                 <input 
                                     onChange={e => setOption1(e.target.value)}
+                                    value={option1}
                                     className='test-option-input'
                                     placeholder='Insert test option'
                                 />
@@ -124,10 +160,13 @@ function AdminCreateTest(props){
                             <div>
                                 <input 
                                     onClick={() => setAnswer2(true)}
+                                    value={answer2}
+                                    checked={answer2}
                                     type='radio'
                                 />
                                 <input 
                                     onChange={e => setOption2(e.target.value)}
+                                    value={option2}
                                     className='test-option-input'
                                     placeholder='Insert test option'
                                 />
@@ -137,10 +176,13 @@ function AdminCreateTest(props){
                             <div>
                                 <input 
                                     onClick={() => setAnswer3(true)}
+                                    value={answer3}
+                                    checked={answer3}
                                     type='radio'
                                 />
                                 <input 
                                     onChange={e => setOption3(e.target.value)}
+                                    value={option3}
                                     className='test-option-input'
                                     placeholder='Insert test option'
                                 />
@@ -150,10 +192,13 @@ function AdminCreateTest(props){
                             <div>
                                 <input 
                                     onClick={() => setAnswer4(true)}
+                                    value={answer4}
+                                    checked={answer4}
                                     type='radio'
                                 />
                                 <input 
                                     onChange={e => setOption4(e.target.value)}
+                                    value={option4}
                                     className='test-option-input'
                                     placeholder='Insert test option'
                                 />
@@ -161,7 +206,7 @@ function AdminCreateTest(props){
                         </div>
                     </div>   
                     <div className='test-btns'>
-                        {index > 0 
+                        {/* {index > 0 
                         ? 
                         <button  
                             className='auth-button'
@@ -170,7 +215,7 @@ function AdminCreateTest(props){
                         >Previous</button>
                         : 
                         null
-                        }
+                        } */}
  
                         <button
                             className='auth-button'
