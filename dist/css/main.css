@@ -5,13 +5,6 @@
   width: 100%;
 }
 
-#classes-title-span {
-  position: absolute;
-  font-size: 60px;
-  left: 300px;
-  top: 75px;
-}
-
 #loading-span {
   position: relative;
   font-size: 60px;
@@ -21,64 +14,187 @@
 .student-class-dash {
   position: relative;
   margin-bottom: 20px;
-  top: 200px;
-  left: 300px;
   height: 50px;
   width: 400px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #aaaaaa;
+  align-items: center;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  background-color: rgba(197, 197, 197, 0.438);
   border-radius: 10px;
 }
 
+.student-class-dash:hover {
+  background-color: #aaaaaa;
+}
+
+.class-input {
+  height: 30px;
+  width: 360px;
+  border-radius: 5px;
+}
+
 .teacher-name {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#mapped-container {
+  position: relative;
+  left: 15%;
+  top: 150px;
+  width: 30%;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+#classes-title-span {
+  position: absolute;
+  font-size: 60px;
+  left: 300px;
+  top: 75px;
+}
+
+#add-class-btn {
+  background-color: #BEFF9F;
+}
+
+#add-class-btn:hover {
+  background-color: #3b3b3b;
+}
+
+body {
+  background-color: rgba(197, 197, 197, 0.438);
 }
 
 .auth-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
   width: 80%;
   margin: 0 auto;
 }
+
+#auth {
+  position: fixed;
+  height: 450px;
+  width: 400px;
+  background-color: #fcf9f9;
+  box-sizing: border-box;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5%;
+}
+
+#auth-title-span {
+  font-size: 70px;
+  position: absolute;
+  align-self: center;
+  top: 40px;
+}
+
+#auth-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+#username-span {
+  position: absolute;
+  top: 180px;
+  left: 15px;
+  font-size: 25px;
+}
+
+#username-input {
+  position: absolute;
+  top: 210px;
+  left: 15px;
+  height: 30px;
+  width: 360px;
+  border-radius: 5px;
+}
+
+#pass-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+#password-span {
+  position: absolute;
+  left: 15px;
+  font-size: 25px;
+  top: 260px;
+}
+
+#password-input {
+  position: absolute;
+  top: 290px;
+  left: 15px;
+  height: 30px;
+  width: 360px;
+  border-radius: 5px;
+}
+
+#login-btn {
+  position: absolute;
+  height: 40px;
+  bottom: 20px;
+  right: 45px;
+}
+
+#register-link-btn {
+  position: absolute;
+  height: 40px;
+  bottom: 20px;
+  left: 45px;
+}
+
+.auth-button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.15em solid #141414;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 300;
+  color: #646464;
+  text-align: center;
+  transition: all 0.2s;
+  height: 40px;
+}
+
+.auth-button:hover {
+  cursor: pointer;
+  color: #fcfcfc;
+  background-color: #3b3b3b;
+}
+
+@media all and (max-width: 30em) {
+  .auth-button {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=main.css.map */

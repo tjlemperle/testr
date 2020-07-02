@@ -53,12 +53,16 @@ function AdminClass(props){
                 <div>
 
                     <input 
+                        className='class-input'
                         onChange={e => setTestName(e.target.value)}
+                        placeholder='Enter Test Name'
                     />
 
                     <button
+                        className='auth-button'
+                        id='add-class-btn'
                         onClick={createTest}
-                        >Create Test</button>
+                        >+ Create Test</button>
                 </div>
                 
             </div>

@@ -84,9 +84,14 @@ function StudentClass(props) {
             </div>
             :
             <div>
-            <span>{tests[0].class_name}</span>
-                {mappedTests}
-                <div>
+                <span className='class-name-span'>{tests[0].class_name}</span>
+                <div className='mapped-tests-avail'>
+                    <span id='tests-avail-span'>Tests</span>
+                    {mappedTests}
+                </div>
+
+                <div className='mapped-tests-taken'>
+                    <span id='tests-taken-span'>Tests Taken</span>
                     {mappedTestsTaken}
                 </div>
                 {/* <Bar 

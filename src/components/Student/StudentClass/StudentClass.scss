@@ -1,6 +1,6 @@
 @import '../../../../scss/variables';
 
-$baackground: rgb(199, 199, 199);
+$background: rgba(197, 197, 197, 0.438);
 
 @mixin flexCenter{
     display: flex;
@@ -11,15 +11,67 @@ $baackground: rgb(199, 199, 199);
 .student-class-test{
     position: relative;
     margin-bottom: 20px;
-    top: 200px;
-    left: 300px;
+    // top: 200px;
+    // left: 300px;
     height: 50px;
     width: 400px;
     box-sizing: border-box;
-    background-color: rgb(170, 170, 170);
+    background-color: $background;
     border-radius: 10px;
     @include flexCenter;
     justify-content: space-evenly;
 
 }
 
+.student-class-test:hover{
+    background-color: rgb(170,170,170);
+}
+
+.class-name-span{
+    font-size: 60px;
+    position: fixed;
+    top: 80px;
+    left: 300px;
+}
+
+.mapped-tests-avail{
+    position: fixed;
+    height: auto;
+    width: 30%;
+    top: 220px;
+    left: 15%;
+    background-color: white;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapped-tests-taken{
+    position: fixed;
+    height: auto;
+    width: 30%;
+    top: 220px;
+    right: 15%;
+    background-color: white;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#tests-taken-span{
+    font-size: 40px;
+    text-decoration: underline;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+#tests-avail-span{
+    font-size: 40px;
+    text-decoration: underline;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}

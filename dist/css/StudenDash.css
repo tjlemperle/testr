@@ -16,62 +16,49 @@
   margin-bottom: 20px;
   height: 50px;
   width: 400px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #aaaaaa;
+  align-items: center;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  background-color: rgba(197, 197, 197, 0.438);
   border-radius: 10px;
 }
 
+.student-class-dash:hover {
+  background-color: #aaaaaa;
+}
+
+.class-input {
+  height: 30px;
+  width: 360px;
+  border-radius: 5px;
+}
+
 .teacher-name {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #mapped-container {
   position: relative;
   left: 15%;
-  top: 150px;
+  top: 170px;
   width: 30%;
   border-radius: 15px;
   background-color: whitesmoke;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-top: 20px;
 }
 
 #classes-title-span {
   position: absolute;
-  font-size: 60px;
+  font-size: 70px;
   left: 300px;
-  top: 75px;
+  top: 80px;
 }
 
 #add-class-btn {
