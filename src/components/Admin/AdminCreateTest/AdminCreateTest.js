@@ -51,13 +51,8 @@ function AdminCreateTest(props){
                         <div className='option-container'>
                             <div>
                                 <input 
-                                className='test-option-input'
-                                    placeholder='Insert test option'
+                                    type='radio'
                                 />
-                            </div>
-                        </div>
-                        <div className='option-container'>
-                            <div>
                                 <input 
                                 className='test-option-input'
                                     placeholder='Insert test option'
@@ -67,6 +62,9 @@ function AdminCreateTest(props){
                         <div className='option-container'>
                             <div>
                                 <input 
+                                    type='radio'
+                                />
+                                <input 
                                 className='test-option-input'
                                     placeholder='Insert test option'
                                 />
@@ -74,6 +72,20 @@ function AdminCreateTest(props){
                         </div>
                         <div className='option-container'>
                             <div>
+                                <input 
+                                    type='radio'
+                                />
+                                <input 
+                                className='test-option-input'
+                                    placeholder='Insert test option'
+                                />
+                            </div>
+                        </div>
+                        <div className='option-container'>
+                            <div>
+                                <input 
+                                    type='radio'
+                                />
                                 <input 
                                 className='test-option-input'
                                     placeholder='Insert test option'
