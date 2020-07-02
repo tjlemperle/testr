@@ -30,7 +30,7 @@ function AdminClass(props){
         return(
             <div key={index}>
                 <span>{element.test_name}</span>
-                <span>{element.end_date}</span>
+                {/* <span>{element.end_date}</span> */}
             </div>
         )
     })
