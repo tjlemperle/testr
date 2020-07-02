@@ -28,7 +28,7 @@ function AdminClass(props){
 
     const mappedTests = tests.map((element, index) => {
         return(
-            <div key={index}>
+            <div className='student-class-test' key={index}>
                 <span>{element.test_name}</span>
                 {/* <span>{element.end_date}</span> */}
             </div>
@@ -66,7 +66,6 @@ function AdminClass(props){
                 </div>
                 
             </div>
-            <span>Tests</span>
         {isLoading === true
         ?
         
@@ -75,8 +74,11 @@ function AdminClass(props){
         </div>
         :
         <div>
-        <span>{tests[0].class_name}</span>
+        <span className='class-name-span'>{tests[0].class_name}</span>
+
+        <div className='mapped-tests-admin'>
             {mappedTests}
+        </div>
         </div>
 
         }
