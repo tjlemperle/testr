@@ -1,20 +1,27 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
-// import axios from 'axios'
+import axios from 'axios'
 
 import './User.scss'
+
 
 function User(props){
 
     const [changePassword, setToggle] = useState(false)
     const [changeEmail, setEmailToggle] = useState(false)
-    // const [email, setEmail] = useState('')
+    const [user_email, setEmail] = useState('')
     // const [password, setPassword] = useState('')
     // const [newPassword, setNewPassword] = useState('')
     // const [verifyNewPassword, setVerifyNewPassword] = useState('')
 
 
-    
+    const updateEmail = () => {
+        console.log(user_email)
+        axios.put('api/user', {user_email})
+        .then(
+            window.location.reload(false)
+        )
+    }
 
     return (
     <div id='user-container'>
@@ -42,6 +49,7 @@ function User(props){
                     <div>
 
                         <input 
+                            onChange={e => setEmail(e.target.value)}
                         />
                         <div>
                             <button
@@ -49,6 +57,7 @@ function User(props){
                                 onClick={() => setEmailToggle(false)}
                             >Cancel</button>
                             <button
+                                onClick={updateEmail}
                                 className='auth-button'
                             >Submit</button>
                         </div>

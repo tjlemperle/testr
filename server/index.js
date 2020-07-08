@@ -38,7 +38,7 @@ app.get('/auth/me', ctrl.userInfo) //userReducer
 app.post('/api/logout', ctrl.logout)
 
 // //student
-// app.put('/api/user/:user_id', ctrl.updateUserInfo)
+app.put('/api/user/', ctrl.updateEmail)
 app.get('/api/classes', ctrl.getStudentClasses)
 app.get('/api/class/:class_id', ctrl.getAllTests)
 app.post('/api/test', ctrl.submitTestAnswers)

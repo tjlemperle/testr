@@ -174,6 +174,15 @@ module.exports = {
         console.log(results)
 
         res.status(200).send(results)
+    },
+
+    updateEmail: async (req, res) => {
+        const db = req.app.get('db')
+
+        const {user_id} = req.session.user
+        const {user_email} = req.body
+
+        db.auth.update_email(user_id, user_email)
     }
 
 
