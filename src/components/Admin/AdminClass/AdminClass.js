@@ -31,9 +31,22 @@ function AdminClass(props){
             <div className='student-class-test' key={index}>
                 <span>{element.test_name}</span>
                 {/* <span>{element.end_date}</span> */}
+                {/* {console.log(element.test_id)} */}
+                <div>
+                    <button
+                        onClick={() => deleteTest(element.test_id)}
+                    >delete</button>
+                </div>
             </div>
         )
     })
+
+    const deleteTest = (test_id) => {
+        axios.delete(`/api/test/${test_id}`)
+        .then(
+            window.location.reload(false)
+        )
+    }
 
 
     const createTest = () => {

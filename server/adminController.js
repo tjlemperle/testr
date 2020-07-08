@@ -73,5 +73,17 @@ module.exports = {
         db.admin.submit_question_option(test_question_id, test_question_answer, test_question_option)
 
         res.sendStatus(200)
+    },
+
+    deleteTest: (req, res) => {
+        const db = req.app.get('db')
+
+        const {test_id} = req.params
+
+        console.log(test_id)
+
+        db.admin.delete_test(test_id)
+
+        res.sendStatus(200)
     }
 }
