@@ -26,22 +26,22 @@
 
 }
 
-#arrow-container{
-    position: absolute;
-    top: 0px;
-    right: 5px;
-    height: 50px;
-    width: 80px;
-}
+// #arrow-container{
+//     position: absolute;
+//     top: 0px;
+//     right: 5px;
+//     height: 50px;
+//     width: 80px;
+// }
 
 
-#arrow{
-    font-size: 60px;
-}
+// #arrow{
+//     font-size: 60px;
+// }
 
-#arrow-container:hover{
-    cursor: pointer;
-}
+// #arrow-container:hover{
+//     cursor: pointer;
+// }
 
 #nav-user-info{
     position: relative;
@@ -108,4 +108,76 @@
 .link:link, .link:visited{
     text-decoration: none;
     font: black;
+}
+
+@media (max-width: 800px){
+    #nav-container{
+        position: fixed;
+        box-sizing: border-box;
+        top: 0px;
+        width: 100%;
+        min-height:100px;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        background-color: #BEFF9F;
+        margin-bottom: 100px;
+    }
+
+    #account-silhoutte, #dashboard-silhoutte{
+        max-width: 50px;
+        border-radius: 100px;
+    }
+
+    #nav-user-info{
+        position: relative;
+        width: 100%;
+        top: 0px;
+    }
+
+    #nav-dashboard{
+        position: relative;
+        top: 0px;
+    }
+
+    #nav-links-container{
+        position: absolute;
+        left: 50px;
+        display: flex;
+        height: 100px;
+        align-items: center;
+    }
+
+    #nav-logout-btn{
+        position: relative;
+        height: 40px;
+        top: 30px;
+        width: 70px;
+        background-color: rgb(252, 152, 152);
+        bottom: 50px;
+        border-radius: 5px;
+    }
+
+    #nav-logout-btn{
+        position: absolute;
+        height: 40px;
+        width: 70px;
+        background-color: rgb(252, 152, 152);
+        right: 50px;
+        border-radius: 5px;
+    }
+    
+    
+
+    // #account-link-container{
+    //     position: relative;
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     font: black;
+    //     text-decoration: none;
+    //     padding: 10px;
+    //     box-sizing: border-box;
+    // }
+
 }

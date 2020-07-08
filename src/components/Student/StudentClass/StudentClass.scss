@@ -75,3 +75,40 @@ $background: rgba(197, 197, 197, 0.438);
     margin-bottom: 40px;
     margin-top: 20px;
 }
+
+@media (max-width: 800px){
+.mapped-tests-avail{
+    position: fixed;
+    height: auto;
+    width: 30%;
+    top: 340px;
+    left: 15%;
+    background-color: white;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapped-tests-taken{
+    position: fixed;
+    height: auto;
+    width: 30%;
+    top: 340px;
+    right: 15%;
+    background-color: white;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.class-name-span{
+    font-size: 60px;
+    position: fixed;
+    top: 200px;
+    left: 300px;
+}
+}

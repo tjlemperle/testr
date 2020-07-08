@@ -13,3 +13,22 @@
     box-sizing: border-box;
     padding-top: 40px;
 }
+
+@media (max-width: 800px){
+    .mapped-tests-admin{
+        position: fixed;
+        height: auto;
+        width: 30%;
+        top: 320px;
+        left: 15%;
+        background-color: white;
+        border-radius: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding-top: 40px;
+    }
+    
+}

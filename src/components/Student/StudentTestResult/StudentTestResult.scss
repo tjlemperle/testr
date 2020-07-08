@@ -125,3 +125,23 @@
     bottom: 20px;
     left: 45%;
 }
+
+
+@media (max-width: 800px){
+    #test-container{
+        position: absolute;
+        top: 10vh;
+        height: 80vh;
+        min-height: 700px;
+        width: 50%;
+        min-width: 500px;
+        background-color: rgb(252, 249, 249);
+        box-sizing: border-box;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5%;
+        left: 25%;
+    }
+}
