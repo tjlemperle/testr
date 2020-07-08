@@ -15,6 +15,11 @@
 }
 
 @media (max-width: 800px){
+    .create-test{
+        position: relative;
+        top: 150px;
+    }
+
     .mapped-tests-admin{
         position: fixed;
         height: auto;

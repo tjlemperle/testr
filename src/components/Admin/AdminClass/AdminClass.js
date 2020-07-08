@@ -63,7 +63,7 @@ function AdminClass(props){
     return(
         <div>
             <div>
-                <div>
+                <div className='create-test'>
 
                     <input 
                         className='class-input'
