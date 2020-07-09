@@ -148,6 +148,7 @@ function StudentClass(props) {
             :
             <div>
                 <span className='class-name-span'>{tests[0].class_name}</span>
+
                 <div className='mapped-tests-avail'>
                     <span id='tests-avail-span'>Tests</span>
                     {mappedTests}
@@ -157,13 +158,16 @@ function StudentClass(props) {
                     <span id='tests-taken-span'>Tests Taken</span>
                     {mappedTestsTaken}
                 </div>
+                <div className='graph-container'>
+
                 <Bar 
                     data= {dataObj}
                     width= {50}
                     height = {50}
                     options= {{maintainAspectRatio: false}}
-
-                />
+                    
+                    />
+                </div>
             </div>
             }
         </div>

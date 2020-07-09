@@ -76,6 +76,14 @@ $background: rgba(197, 197, 197, 0.438);
     margin-top: 20px;
 }
 
+.graph-container{
+    position: fixed;
+    top: 0px;
+    right: 200px;
+    height: 200px;
+    width: 500px;
+}
+
 @media (max-width: 800px){
 .mapped-tests-avail{
     position: fixed;
