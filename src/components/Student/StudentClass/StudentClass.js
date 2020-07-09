@@ -130,7 +130,14 @@ function StudentClass(props) {
                 hoverBorderColor: 'rgba(255,99,132,1)',
                 data: scores
             }
-        ]
+        ],
+        // scales: {
+        //     yAxes: [{
+        //         ticks: {
+        //             beginAtZero: true
+        //         }
+        //     }]
+        // }
     }
 
 
